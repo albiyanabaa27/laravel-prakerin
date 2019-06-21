@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use App\Validator;
 use App\user;
 use App\siswa;

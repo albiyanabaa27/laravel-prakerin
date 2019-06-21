@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
+
 use App\http\Controllers\Controller;
 use App\Validator;
 use App\user;
@@ -23,7 +24,6 @@ class SiswaController extends Controller
                 'data' => 'Empty',
                 'message' => 'Siswa tidsk ditemukan.'
             ];
-            return response()->json($response, 404);
         }
 
         $response = [

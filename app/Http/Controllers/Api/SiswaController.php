@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-use App\http\Controllers\controller;
+use App\http\Controllers\Controller;
 use App\user;
-use App\Siswa;
+use App\siswa;
 use Illuminate\Http\Request;
 
 class SiswaController extends Controller
@@ -15,7 +15,7 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $siswa = Siswa::all();
+        $siswa = siswa::all();
         if (!$siswa) {
             $response = [
                 'success' => false,

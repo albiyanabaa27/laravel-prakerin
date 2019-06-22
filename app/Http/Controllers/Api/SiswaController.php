@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Validator;
+use Validator;
 use App\user;
 use App\siswa;
 use Illuminate\Http\Request;
@@ -18,12 +18,13 @@ class SiswaController extends Controller
     public function index()
     {
         $siswa = siswa::all();
-        if (!$siswa) {
+        if (count($siswa) <= 0) {
             $response = [
                 'success' => false,
                 'data' => 'Empty',
                 'message' => 'Siswa tidsk ditemukan.'
             ];
+            return response()->json($response, 404);
         }
 
         $response = [
@@ -57,7 +58,7 @@ class SiswaController extends Controller
 
         //2. buat validasi di tampung ke $validator
         $validator = Validator::make($input, [
-            'nama' => 'required|min:10'
+            'nama' => 'required|min:5'
         ]);
 
         // 3. chek validasi
@@ -143,7 +144,7 @@ class SiswaController extends Controller
             return response()->json($response, 404);
         }
         $validator = Validator::make($input, [
-            'nama' => 'required|min:10'
+            'nama' => 'required|min:5'
         ]);
         if ($validator->fails()) {
             $response = [

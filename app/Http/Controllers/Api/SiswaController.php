@@ -22,13 +22,13 @@ class SiswaController extends Controller
             $response = [
                 'success' => false,
                 'data' => 'Empty',
-                'message' => 'Siswa tidsk ditemukan.'
+                'message' => 'Siswa tidak ditemukan.'
             ];
             return response()->json($response, 404);
         }
 
         $response = [
-            'success' =>true,
+            'success' => true,
             'data' => $siswa,
             'message' => 'berhasil'
         ];
@@ -75,15 +75,12 @@ class SiswaController extends Controller
         // dimasukan ke table
         $siswa = siswa::create($input);
 
-        //5.menampilkan response
-        $response =[
+        $response = [
             'success' => true,
             'data' => $siswa,
-            'message' => 'Siswa berhasil ditambahkan.'
+            'message' => 'berhasil'
         ];
-
-        // 6. tampilan hasil
-        return response()->json($request, 200);
+        return response()->json($response, 200);
     }
 
     /**
@@ -105,7 +102,7 @@ class SiswaController extends Controller
         }
 
         $response = [
-            'success' =>true,
+            'success' => true,
             'data' => $siswa,
             'message' => 'berhasil'
         ];
@@ -150,7 +147,7 @@ class SiswaController extends Controller
             $response = [
                 'success' => false,
                 'data' => 'validation eroor.',
-                'message' =>$validator->errors()
+                'message' => $validator->errors()
             ];
             return response()->json($response, 500);
         }

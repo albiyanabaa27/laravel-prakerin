@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 // Route::Controller('siswa',Controller\Api\SiswaController);
-route::resource('siswa','Api\SiswaController');
+//route::resource('siswa','Api\SiswaController');

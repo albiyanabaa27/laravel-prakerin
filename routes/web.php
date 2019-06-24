@@ -15,24 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('archive', function () {
-    return view('frontend.archive');
-});
+//Route::get('archive', function () {
+  //  return view('archive');
+//});
 
 Route::get('category', function () {
-    return view('frontend.category');
+    return view('category');
 });
 
 Route::get('contact', function () {
-    return view('frontend.contact');
+    return view('contact');
 });
 
-Route::get('elements', function () {
-    return view('frontend.element');
+Route::get('regular-page', function () {
+    return view('regular-page');
 });
 
-Route::get('news-details', function () {
-    return view('frontend.news-details');
+Route::get('single-blog', function () {
+    return view('single-blog');
 });
 
 Auth::routes();

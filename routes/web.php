@@ -56,7 +56,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'admin','middleware'=>'auth'],
 function (){
     Route::get('/', function(){
-        return view('backend.index');
+        return view('home');
     });
     Route::resource('kategori', 'Kategori_Controller');
     Route::resource('tag', 'Tag_Controller');

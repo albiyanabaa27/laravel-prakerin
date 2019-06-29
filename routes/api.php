@@ -27,3 +27,5 @@ function (){
     // Route::resource('tag', 'Tag_Controller');
     // Route::resource('artikel', 'Artikel_Controller');
 });
+
+

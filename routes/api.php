@@ -16,5 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-// Route::Controller('siswa',Controller\Api\SiswaController);
-//route::resource('siswa','Api\SiswaController');
+ Route::resource('siswa','Api\SiswaController');
+// Route::resource('kategori','Api\KategoriController');
+// Route::resource('artikel','Api\ArtikelController');
+// Route::resource('tag','Api\tagController');
+
+Route::group(['prefix'=>'json'],
+function (){
+    Route::get('index', 'FrontendController@index');
+    // Route::resource('tag', 'Tag_Controller');
+    // Route::resource('artikel', 'Artikel_Controller');
+});
